@@ -1,6 +1,6 @@
 services:
   frontapp:
-    image: ghcr.io/boersen-party/boersenparty-frontend:${LABEL}
+    image: ghcr.io/boersen-party/boersenparty-frontend:${DOCKER_LABEL}
     restart: always
     labels:
       - "traefik.enable=true"
