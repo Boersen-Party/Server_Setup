@@ -12,7 +12,7 @@ services:
     #     - ${APP_IP}:8080:8080
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./traefik.yml.tmp:/traefik.yml.tmp:ro"
+      - "./traefik.yml:/traefik.yml:ro"
       - "./acme.json:/acme.json"
     labels:
       - "traefik.enable=true"
