@@ -1,0 +1,35 @@
+services:
+  backend:
+    image: ghcr.io/boersen-party/boersenparty-backend:${DOCKER_LABEL}
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/bparty
+      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$APP_NAME.entrypoints=websecure"
+      - "traefik.http.routers.$APP_NAME.rule=Host($APP_URL)"
+      - "traefik.http.routers.$APP_NAME.tls.certresolver=letsencrypt"
+      - "traefik.http.services.$APP_NAME.loadbalancer.server.port=$APP_PORT"
+    networks:
+      - traefik
+      - backend
+
+  database:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: bparty
+    volumes:
+      - ./.volumes/postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+
+networks:
+  backend:
+    external: false
+  traefik:
+    external: true
