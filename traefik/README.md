@@ -1,4 +1,3 @@
-
 # Setup Traefik
 
 ## Manual Steps
@@ -12,6 +11,10 @@
 4. Run the following command to create a Docker network:
    ```sh
    docker network create traefik
+   ```
+5. Start Traefik using Docker Compose:
+   ```sh
+   docker-compose up -d
    ```
 
 # Traefik einrichten
@@ -27,4 +30,8 @@
 4. Führe den folgenden Befehl aus, um ein Docker-Netzwerk zu erstellen:
    ```sh
    docker network create traefik
+   ```
+5. Starte Traefik mit Docker Compose:
+   ```sh
+   docker-compose up -d
    ```
