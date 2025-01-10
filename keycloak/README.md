@@ -38,7 +38,9 @@
    #### Capability config
     - Authentication flow (Standard Flow and Direct Access Grants)
 
-
+7. Create new user, staff and organizer.
+8. Create new roles, staff and organizer.
+9. Assign roles to users.
 
 # Keycloak einrichten
 
@@ -79,3 +81,7 @@
     - Admin-URL: `https://{yourDomain}`
    #### Fähigkeitskonfiguration
     - Authentifizierungsfluss (Standardfluss und Direkter Zugriff)
+
+7. Erstellen Sie neue User, Mitarbeiter und Organisatoren.
+8. Erstellen Sie neue Rollen, Mitarbeiter und Organisatoren.
+9. Weisen Sie Rollen Benutzern zu.
