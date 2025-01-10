@@ -17,8 +17,6 @@
    docker-compose up -d
    ```
 
-# Traefik einrichten
-
 ## Manuelle Schritte
 
 1. Kopiere `traefik.yml.tmp` nach `traefik.yml` und ändere die E-Mail-Adresse in `traefik.yml`.
